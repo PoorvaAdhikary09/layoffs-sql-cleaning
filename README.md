@@ -1,62 +1,69 @@
-# 🧹 SQL Data Cleaning Project – Layoffs Dataset
+# 🧹 SQL Data Cleaning & EDA – Layoffs Dataset
 
-This project demonstrates a full **SQL-based data cleaning workflow** on a raw layoffs dataset.  
-The goal was to transform messy, inconsistent data into a standardized, analysis-ready format.  
+This project demonstrates a complete **SQL-based workflow** — from **data cleaning** to **Exploratory Data Analysis (EDA)** — on a layoffs dataset.  
+The goal was to transform messy, inconsistent data into a **standardized, analysis-ready format** and then uncover key insights.  
 
 ---
 
 ## 📂 Repository Structure
-- **layoffs.csv** → Raw dataset (as received)  
-- **SQL Queries.sql** → SQL scripts used for cleaning and transformation    
+- **`layoffs.csv`** → Raw dataset (as received)  
+- **`SQL Cleaning.sql`** → SQL scripts used for cleaning and transformation  
+- **`layoffs_cleaned.csv`** → Final cleaned dataset (exported from MySQL)  
+- **`SQL EDA.sql`** → SQL scripts for exploratory data analysis  
 
 ---
 
-## 🔧 Data Cleaning Steps
-The following transformations were applied in **MySQL**:
-
-1. **Standardized company names and industry labels**  
-   - Removed leading/trailing spaces  
-   - Unified inconsistent text formats (e.g., "crypto%" → "Crypto")  
+## 🔧 Data Cleaning Steps (MySQL)
+1. **Standardized company names & industry labels**  
+   - Trimmed extra spaces  
+   - Unified inconsistent formats (e.g., `"crypto%" → "Crypto"`)  
 
 2. **Fixed country names**  
-   - Corrected typos and standardized naming (e.g., `United States.` → `United States`)  
+   - Corrected typos (e.g., `United States.` → `United States`)  
 
 3. **Converted date column**  
-   - Transformed from string format (`mm/dd/yyyy`) → SQL `DATE` type  
+   - String format (`mm/dd/yyyy`) → SQL `DATE` type  
 
 4. **Handled missing values**  
    - Replaced empty strings with `NULL`  
-   - Populated missing industries using company information (e.g., Airbnb → Travel, Carvana → Transportation)  
+   - Populated missing industries (e.g., Airbnb → Travel, Carvana → Transportation)  
 
 5. **Removed unnecessary data**  
-   - Dropped unused helper columns  
-   - Deleted rows where both `total_laid_off` and `percentage_laid_off` were `NULL`  
+   - Dropped helper columns  
+   - Deleted rows where both `total_laid_off` & `percentage_laid_off` were `NULL`  
 
 ---
 
-## 📊 Why This Matters
-Cleaning data ensures:  
-- Consistency for analysis  
-- Accurate aggregations and visualizations  
-- Better reliability for downstream tasks like **EDA** or **machine learning**  
+## 📊 Exploratory Data Analysis (EDA)
+Key insights derived using SQL:  
+- 🔝 **Largest layoffs** by company, country, and industry  
+- 📆 **Trends over time** (monthly & yearly)  
+- 🏆 **Top companies** ranked by layoffs across years  
+- 📈 **Cumulative totals** to measure long-term impact  
+
+---
+
+## 🌟 Key Learnings
+- ✅ Clean data ensures **consistency & accuracy**  
+- ✅ SQL can handle both **data transformation** & **analysis** effectively  
+- ✅ A cleaned dataset is a strong foundation for **Python, Tableau, or Power BI** projects  
 
 ---
 
 ## 🚀 Tools & Tech
-- **SQL (MySQL)** – primary tool for data cleaning  
-- **Git & GitHub** – version control and project hosting  
+- **MySQL** – Data cleaning & EDA  
+- **Git & GitHub** – Version control & project hosting  
 
 ---
 
 ## 📌 Next Steps
-- Perform **Exploratory Data Analysis (EDA)** on the cleaned dataset  
-- Visualize layoff trends across industries, countries, and years  
-- Share insights with interactive dashboards (Python / Tableau)  
+- 📊 Create **visualizations** (Tableau / Power BI)  
+- 🔍 Extend analysis: industry & geographic layoff patterns  
+- 🔗 Compare SQL results with **Python-based EDA**  
 
 ---
 
 ## 👩‍💻 Author
 **Poorva Adhikary**  
-Final-year B.Tech student | Aspiring Data Analyst  
-📬 [LinkedIn](https://https://www.linkedin.com/in/poorva-adhikary-367458256/) | [GitHub](https://github.com/PoorvaAdhikary09)  
-
+🎓 Final-year B.Tech student | 📈 Aspiring Data Analyst  
+🔗 [LinkedIn](https://www.linkedin.com/in/poorva-adhikary-367458256/) | [GitHub](https://github.com/PoorvaAdhikary09)  
